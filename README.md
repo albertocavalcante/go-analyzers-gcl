@@ -1,5 +1,10 @@
 # go-analyzers-gcl
 
+[![CI](https://github.com/albertocavalcante/go-analyzers-gcl/actions/workflows/ci.yml/badge.svg)](https://github.com/albertocavalcante/go-analyzers-gcl/actions/workflows/ci.yml)
+[![Go Reference](https://pkg.go.dev/badge/github.com/albertocavalcante/go-analyzers-gcl.svg)](https://pkg.go.dev/github.com/albertocavalcante/go-analyzers-gcl)
+[![Go Report Card](https://goreportcard.com/badge/github.com/albertocavalcante/go-analyzers-gcl)](https://goreportcard.com/report/github.com/albertocavalcante/go-analyzers-gcl)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+
 [golangci-lint v2](https://golangci-lint.run/) [module plugin](https://golangci-lint.run/docs/plugins/module-plugins/) for [go-analyzers](https://github.com/albertocavalcante/go-analyzers) -- custom Go static analyzers for modern Go 1.25+ idioms.
 
 ## Analyzers
