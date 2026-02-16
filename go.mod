@@ -1,4 +1,4 @@
-module github.com/albertocavalcante/go-analyzers-golangcilint
+module github.com/albertocavalcante/go-analyzers-gcl
 
 go 1.25.0
 
