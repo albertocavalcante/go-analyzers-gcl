@@ -1,39 +1,52 @@
-# go-analyzers-golangcilint
+# go-analyzers-gcl
 
-[golangci-lint v2 module plugin](https://golangci-lint.run/docs/plugins/module-plugins/) for [go-analyzers](https://github.com/albertocavalcante/go-analyzers).
+[golangci-lint v2](https://golangci-lint.run/) [module plugin](https://golangci-lint.run/docs/plugins/module-plugins/) for [go-analyzers](https://github.com/albertocavalcante/go-analyzers) -- custom Go static analyzers for modern Go 1.25+ idioms.
 
-Registers the following analyzers:
+## Analyzers
 
-- **`makecopy`** — detects `make` + `copy` that can be replaced with `slices.Clone`
-- **`searchmigrate`** — detects `sort.Search` that can be replaced with `slices.BinarySearch`
-- **`clampcheck`** — detects if/else-if clamping that can be replaced with `min`/`max`
+| Analyzer | Detects | Suggests |
+|---|---|---|
+| `makecopy` | `make([]T, len(s))` + `copy(dst, s)` | `slices.Clone(s)` |
+| `searchmigrate` | `sort.Search(n, func(i int) bool { ... })` | `slices.BinarySearch(s, v)` |
+| `clampcheck` | `if x < lo { x = lo } else if x > hi { x = hi }` | `min(max(x, lo), hi)` |
+
+These fill gaps left by the official [modernize](https://pkg.go.dev/golang.org/x/tools/go/analysis/passes/modernize) suite. See the [go-analyzers README](https://github.com/albertocavalcante/go-analyzers#why-these-analyzers) for details.
 
 ## Usage
 
-1. Create `.custom-gcl.yml` in your project:
+### 1. Create `.custom-gcl.yml`
 
 ```yaml
 version: v2.9.0
 plugins:
-  - module: 'github.com/albertocavalcante/go-analyzers-golangcilint'
+  - module: 'github.com/albertocavalcante/go-analyzers-gcl'
     version: v0.1.0
 ```
 
-2. Build custom binary:
+### 2. Build the custom binary
 
 ```bash
 golangci-lint custom
 ```
 
-3. Add to your golangci-lint config:
+### 3. Configure the linters
 
-```toml
-[linters.settings.custom.go-analyzers]
-type = "module"
-description = "Custom analyzers for modern Go idioms"
+Add to `.golangci.yml`:
+
+```yaml
+version: "2"
+linters:
+  default: none
+  enable:
+    - go-analyzers
+  settings:
+    custom:
+      go-analyzers:
+        type: module
+        description: "Custom analyzers for modern Go idioms"
 ```
 
-4. Run:
+### 4. Run
 
 ```bash
 ./custom-gcl run ./...

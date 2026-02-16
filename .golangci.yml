@@ -1,0 +1,10 @@
+version: "2"
+linters:
+  default: none
+  enable:
+    - go-analyzers
+  settings:
+    custom:
+      go-analyzers:
+        type: module
+        description: "Custom analyzers for modern Go idioms"
