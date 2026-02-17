@@ -1,5 +1,5 @@
-github.com/albertocavalcante/go-analyzers v0.1.1-0.20260216235853-9478e2d26f51 h1:t/2fCZR0r3xZREWLRzXl3bKd014j9B54QOU2HQ4JFus=
-github.com/albertocavalcante/go-analyzers v0.1.1-0.20260216235853-9478e2d26f51/go.mod h1:ZBON1mB7tjS0HBP3fID6I1h4EzO2K/HekoINoAUe3ZA=
+github.com/albertocavalcante/go-analyzers v0.1.1-0.20260217001134-2008be406227 h1:Vic0CnevX87lmLDdIswE+V0yg9RPb/xEW1x8W4R12FY=
+github.com/albertocavalcante/go-analyzers v0.1.1-0.20260217001134-2008be406227/go.mod h1:ZBON1mB7tjS0HBP3fID6I1h4EzO2K/HekoINoAUe3ZA=
 github.com/golangci/plugin-module-register v0.1.2 h1:e5WM6PO6NIAEcij3B053CohVp3HIYbzSuP53UAYgOpg=
 github.com/golangci/plugin-module-register v0.1.2/go.mod h1:1+QGTsKBvAIvPvoY/os+G5eoqxWn70HYDm2uvUyGuVw=
 golang.org/x/mod v0.33.0 h1:tHFzIWbBifEmbwtGz65eaWyGiGZatSrT9prnU8DbVL8=
